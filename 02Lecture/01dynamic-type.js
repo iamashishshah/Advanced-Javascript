@@ -1,7 +1,7 @@
 /*
-    -- there are two type of variable:
-    1. dynamic type: javascript or python(ig)
-    2. static type: e.g c/java, int a = 28; int num; at the time of declaration we say
+    *-- there are two type of variable:
+    *1. dynamic type: javascript or python(ig) 
+    *2. static type: e.g c/java, int a = 28; int num; at the time of declaration we say
 */
 
 let randomeVariable = 10;

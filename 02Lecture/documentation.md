@@ -69,3 +69,84 @@ let data = [10, 20, NaN, 40, 50];
 let cleanData = data.filter(value => !Number.isNaN(value));
 
 ```
+
+
+## What is the meaning of object nature of javascript? How javascript 
+
+## what is 'type tag' in javascript?
+while there is primitive data type like: undefined, number, boolean, string, symbol, and bigint
+other than this are 'object'
+js internally uses 'type tag' to identify the type of variable, but while making js null value also got tag of 0, which is for objects, in this way null value became 'object' type
+
+## how does automatic type conversion work? How js engine convert it?
+
+## what is 'coersion' or coerce(convert)
+
+## what is 'polymorphism' in js? how js uses polymorphism?
+ JavaScript’s operations are designed to be flexible, allowing different types of values to be used in various contexts
+
+
+## what is 'AST'(abstract syntax tree)
+Abstract Syntax Tree (AST): Represents the structure of the code, helping the engine understand how to execute it.
+
+## num.toString()? if num is primitive type then how is it calling a method? "Boxing"
+javascript automatically wrap it into Number then use the method and after using the method it discard the wrapped value.
+
+## but when we do 4.toString(), why do we get an error?
+1. first: to represent 34.3, decimal values
+2. sec: to access key from a object
+but when we do 4.toString(), js gets confused, like are you trying to represnt a decimal value or you're trying to access method?
+that's why it gives us error
+if you don't want error then use "4".toString() or (4).toString() or 4..toString() this will work perfectely fine
+
+## what is the meaning of [object Object] while you try to convert an 'object' into string
+The output [object Object] in your JavaScript code represents an object that has been converted to a string.
+it gives like that because javascript doesn't know how to make meaningfull sentence while converting 'object' data type, so it gives like this
+
+## we can use JSON.stringigy({name: "Ashish"})
+it will convert object into string {"name":"Ashish"}
+
+## what is the difference between 'object' and 'Object'
+object (lowercase): This is a general term that refers to any value that is an instance of the object type.
+bject (uppercase): This refers to the built-in JavaScript Object constructor. It's a function that allows you to create new objects and is part of the JavaScript standard library. You can create objects using new Object() or simply using object literals ({}).
+
+//TODO: note in 'js' creating object, accessing object is costely then doing same with primitive values
+
+
+1. first: to represent 34.3, decimal values
+2. sec: to access key from a object
+
+
+## why NaN === NaN always gives false ?
+where is the chance we can get NaN while doing some operation
+parseInt("string")
+"heelO" * 3;
+Math.sqrt(-3) here in all above cases we'll get NaN as output
+NaN === NaN will always give false, Since NaN is a unique value in JavaScript, the standard equality checks will not work as expected
+
+console.log(Number.isNaN(NaN))   // true
+isNaN(NaN)  // true
+isNan(23)   false
+isNaN("tr")  true
+
+NaN is useful for identifying situations where a calculation does not yield a valid number, allowing you to handle errors or unexpected input gracefully. It's important to check for NaN appropriately using Number.isNaN() or isNaN() to avoid common pitfalls in JavaScript.
+
+## when we'll get Number.isNaN() as true
+Number.isNaN(value) returns true only if the value is of type Number and is actually NaN.
+console.log(Number.isNaN('123')); // Output: false
+
+It returns false for any other value, including strings, objects, and valid numbers, even if they may have produced NaN through some other operation.
+
+This behavior helps avoid the pitfalls of the older isNaN() function, which could return true for non-numeric types as well. For example:
+
+javascript
+Copy code
+console.log(isNaN('foo')); // Output: true (which can be misleading)
+
+
+## what is the meaning of 'lexical scope'
+Lexical scope refers to the visibility of variables within nested functions. In JavaScript, the scope is determined by the physical structure of the code (where functions are defined), not by how they are invoked.
+A function can access variables from its own scope, its parent scope (lexical parent), and any global scope.
+
+
+## what is the actual meaning of 'window object' or 'global object'
